@@ -8,12 +8,12 @@ class Register extends React.Component {
             username: '',
             password: '',
             email: '',
-            isLoggedIn: false,
+            isSignUp: false,
             error: ''
         };
     }
 
-    handleLogin = async (e) => {
+    handleSignUp = async (e) => {
         e.preventDefault();
 
         // Kiểm tra độ dài mật khẩu
@@ -47,7 +47,7 @@ class Register extends React.Component {
 
             if (response.ok) {
                 // Đăng nhập thành công
-                this.setState({ isLoggedIn: true, error: '' });
+                this.setState({ isSignUp: true, error: '' });
             } else {
                 // Xử lý lỗi đăng nhập
                 const errorData = await response.json();
@@ -72,24 +72,24 @@ class Register extends React.Component {
     };
 
     render() {
-        const { isLoggedIn, error } = this.state;
+        const { isSignUp, error } = this.state;
 
         return (
             <div>
-                {isLoggedIn ? (
+                {isSignUp ? (
                     <div>
                         
                     </div>
                 ) : (
                     <div>
                         {error && <p>{error}</p>}
-                        <form className="form" onSubmit={this.handleLogin}>
+                        <form className="form" onSubmit={this.handleSignUp}>
                             <h1>Đăng nhập</h1>
                             <div className="form-group">
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Tên đăng nhập"
+                                    placeholder="Username"
                                     value={this.state.username}
                                     onChange={this.handleUsernameChange}
                                 />
@@ -98,7 +98,7 @@ class Register extends React.Component {
                                 <input
                                     type="password"
                                     className="form-control"
-                                    placeholder="Mật khẩu"
+                                    placeholder="Password"
                                     value={this.state.password}
                                     onChange={this.handlePasswordChange}
                                 />

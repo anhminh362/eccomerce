@@ -5,6 +5,7 @@ class Search extends Component {
         return (
             <div className="main">
                 {/* Another variation with a button */}
+                
                 <div className="input-group">
                     <input
                         type="text"

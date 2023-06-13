@@ -1,6 +1,59 @@
+import { useState } from "react";
+import axios from 'axios';
+import './Header.css';
 function Header() {
+    const [showForm, setShowForm] = useState(false);
+    const [fullName, setFullName] = useState("");
+    const [content, setContent] = useState("");
+
+    const handleClick = () => {
+        setShowForm(true);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(fullName, content);
+
+        axios.post('http://localhost:3000/forms', {
+            fullName: fullName,
+            content: content
+        })
+            .then(function (response) {
+                alert(response);
+            })
+            .catch(function (error) {
+                alert(error);
+            });
+
+
+
+        setFullName("");
+        setContent("");
+        // Đóng form
+        setShowForm(false);
+    };
+
     return (
         <>
+            {showForm && (
+                <div className="form-contact">
+                    <form onSubmit={handleSubmit} className="form">
+                        <h2>Contact</h2>
+                        <input className="form-control input"
+                            type="text"
+                            placeholder="Họ tên"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                        />
+                        <textarea className="form-control textarea"
+                            placeholder="Nội dung"
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                        ></textarea>
+                        <button type="submit" className="submit">Gửi</button>
+                    </form>
+                </div>
+            )}
             {/* banner bg main start */}
             <div className="banner_bg_main">
                 {/* header top section start */}
@@ -64,7 +117,7 @@ function Header() {
                                 <a href="electronic.html">Electronic</a>
                                 <a href="jewellery.html">Jewellery</a>
                             </div>
-                            <span className="toggle_icon" onClick={"openNav()"}>
+                            <span className="toggle_icon" onClick={handleClick}>
                                 <img src="images/toggle-icon.png" />
                             </span>
                             <div className="dropdown">
@@ -90,8 +143,6 @@ function Header() {
                                     </a>
                                 </div>
                             </div>
-
-
                             <div className="main">
                                 {/* Another variation with a button */}
                                 <div className="input-group">
@@ -100,7 +151,6 @@ function Header() {
                                         className="form-control"
                                         placeholder="Search this blog"
                                     />
-
                                     <div className="input-group-append">
                                         <button
                                             className="btn btn-secondary"
@@ -112,8 +162,6 @@ function Header() {
                                     </div>
                                 </div>
                             </div>
-
-
                             <div className="header_box">
                                 <div className="lang_box ">
                                     <a
@@ -154,7 +202,7 @@ function Header() {
                                         <li>
                                             <a href="#">
                                                 <i className="fa fa-user" aria-hidden="true" />
-                                                <span className="padding_10">User</span>
+                                                <span className="padding_10">Cart</span>
                                             </a>
                                         </li>
                                     </ul>

@@ -140,6 +140,32 @@
       "image": "https://dongphuchaianh.vn/wp-content/uploads/2022/09/phoi-do-nam-di-choi-layer.jpg",
       "type": "man"
     }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "username": "phuong12",
+      "email": "phuong@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "username": "thuy22",
+      "email": "thuy@gmail.com",
+      "password": "2344"
+    },
+    {
+      "id": "3",
+      "username": "loan",
+      "email": "loan@gmail.com",
+      "password": "1234354"
+    }
+  ],
+  "forms": [
+    {
+      "fullName": "Hoang",
+      "content": "abc xyz"
+    }
   ]
+  
 }
-

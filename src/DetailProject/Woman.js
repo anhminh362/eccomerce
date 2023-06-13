@@ -9,7 +9,7 @@ function Woman() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch('http://localhost:3000/womanClothes');
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -22,8 +22,8 @@ function Woman() {
     return (
         <div className="row">
             {filteredProducts.map((product, index) => (
-                <div key={index} className="col-lg-4 col-sm-4">
-                    <div className="box_main">
+                <div key={index} id={product.id} className="col-lg-4 col-sm-4 ">
+                    <div className="box_main w-100 h-100">
                         <h4 className="shirt_text">{product.title}</h4>
                         <p className="price_text">
                             Price <span style={{ color: '#262626' }}>${product.price}</span>

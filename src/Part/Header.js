@@ -55,9 +55,8 @@ function Header() {
                     </form>
                 </div>
             )}
-            {/* banner bg main start */}
+
             <div className="banner_bg_main">
-                {/* header top section start */}
                 <div className="container">
                     <div className="header_section_top">
                         <div className="row">
@@ -101,6 +100,7 @@ function Header() {
                     </div>
                 </div>
                 {/* logo section end */}
+                
                 {/* header section start */}
                 <div className="header_section">
                     <div className="container">

@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "title": "Women's Dress",
+      "title": "Women's Dress", 
       "price": 59.99,
       "image": "https://i5.walmartimages.com/asr/26acca18-7db1-44c6-ab1d-28a7197310e7.7c2930854f05d2fac1b72499a2f8d2a5.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
       "type": "woman"
@@ -177,11 +177,22 @@
       "password": "Abcxyz2011!",
       "email": "abc@gmail.com",
       "id": "dJAeMjw"
+    },
+    {
+      "username": "abcabc",
+      "password": "Abc2011!",
+      "email": "thaihoang20112k3@gmail.com",
+      "id": "R4ZVAce"
     }
   ],
   "forms": [
     {
       "id": 1,
+      "fullName": "Hoang",
+      "content": "Quan ao ngon"
+    },
+    {
+      "id": 2,
       "fullName": "Hoang",
       "content": "Quan ao ngon"
     }

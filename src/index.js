@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './DetailProject/Detail.css';
+
 import reportWebVitals from './reportWebVitals';
 import ShowProduct from './DetailProject/ShowProduct';
 const root = ReactDOM.createRoot(document.getElementById('root'));

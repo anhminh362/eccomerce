@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 function ShowProduct() {
-
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -24,7 +23,7 @@ function ShowProduct() {
                 <div id="main_slider" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         {products.map((product, index) => (
-                            <div id={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                            <div id={index} className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
                                 <div className="container">
                                     <h1 className="fashion_taital">Man &amp; Woman Fashion</h1>
                                     <div className="fashion_section_2">
@@ -32,11 +31,19 @@ function ShowProduct() {
                                             <div className="col-lg-4 col-sm-4">
                                                 <div className="box_main">
                                                     <h4 className="shirt_text">{product.title}</h4>
-                                                    <p className="price_text">Price <span style={{ color: '#262626' }}>${product.price}</span></p>
-                                                    <div className="tshirt_img"><img src={product.image} alt={product.title} /></div>
+                                                    <p className="price_text">
+                                                        Price <span style={{ color: '#262626' }}>${product.price}</span>
+                                                    </p>
+                                                    <div className="tshirt_img">
+                                                        <img src={product.image} alt={product.title} />
+                                                    </div>
                                                     <div className="btn_main">
-                                                        <div className="buy_bt"><a href="#">Buy Now</a></div>
-                                                        <div className="seemore_bt"><a href="#">See More</a></div>
+                                                        <a className="buy_bt">
+                                                            <a href="#">Buy Now</a>
+                                                        </a>
+                                                        <a className="seemore_bt" href={`/detail/${product.id}`}>
+                                                            See More
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -45,13 +52,11 @@ function ShowProduct() {
                                 </div>
                             </div>
                         ))}
-
                     </div>
-
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default ShowProduct;

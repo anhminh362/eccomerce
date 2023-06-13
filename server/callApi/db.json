@@ -143,8 +143,8 @@
   ],
   "user": [
     {
-      "id": "1",
-      "username": "phuong12",
+      "id": "loan",
+      "username": "loan",
       "email": "phuong@gmail.com",
       "password": "123"
     },
@@ -156,16 +156,34 @@
     },
     {
       "id": "3",
-      "username": "loan",
+      "username": "akjd",
       "email": "loan@gmail.com",
       "password": "1234354"
+    },
+    {
+      "username": "hoang",
+      "password": "Hoang2011!",
+      "email": "thaihoang20112k3@gmail.com",
+      "id": "IlRfXFN"
+    },
+    {
+      "username": "1convit",
+      "password": "Hoang2011!",
+      "email": "th20112k3@gmail.com",
+      "id": "7pfYKzg"
+    },
+    {
+      "username": "abcxyz",
+      "password": "Abcxyz2011!",
+      "email": "abc@gmail.com",
+      "id": "dJAeMjw"
     }
   ],
   "forms": [
     {
+      "id": 1,
       "fullName": "Hoang",
-      "content": "abc xyz"
+      "content": "Quan ao ngon"
     }
   ]
-  
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import './Header.css';
 function Header() {
@@ -10,16 +11,17 @@ function Header() {
         setShowForm(true);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(fullName, content);
 
-        axios.post('http://localhost:3000/forms', {
+        await axios.put('http://localhost:3000/forms/1', {
+            id: 1,
             fullName: fullName,
             content: content
         })
             .then(function (response) {
-                alert(response);
+                alert("Successful");
             })
             .catch(function (error) {
                 alert(error);
@@ -29,7 +31,6 @@ function Header() {
 
         setFullName("");
         setContent("");
-        // Đóng form
         setShowForm(false);
     };
 

@@ -1,5 +1,3 @@
-import Search from "../Search/Search";
-
 function Header() {
     return (
         <>
@@ -94,7 +92,26 @@ function Header() {
                             </div>
 
 
-                            <Search></Search>
+                            <div className="main">
+                                {/* Another variation with a button */}
+                                <div className="input-group">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Search this blog"
+                                    />
+
+                                    <div className="input-group-append">
+                                        <button
+                                            className="btn btn-secondary"
+                                            type="button"
+                                            style={{ backgroundColor: "#f26522", borderColor: "#f26522" }}
+                                        >
+                                            <i className="fa fa-search" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
 
                             <div className="header_box">
@@ -137,7 +154,7 @@ function Header() {
                                         <li>
                                             <a href="#">
                                                 <i className="fa fa-user" aria-hidden="true" />
-                                                <span className="padding_10">Cart</span>
+                                                <span className="padding_10">User</span>
                                             </a>
                                         </li>
                                     </ul>

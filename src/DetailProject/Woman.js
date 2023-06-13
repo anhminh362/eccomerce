@@ -9,7 +9,7 @@ function Woman() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:3000/womanClothes');
+            const response = await fetch('http://localhost:3000/clothes');
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -17,7 +17,7 @@ function Woman() {
         }
     };
 
-    const filteredProducts = products.filter(product => product.category === "women's clothing");
+    const filteredProducts = products.filter(product => product.type === "woman");
 
     return (
         <div className="row">
@@ -36,7 +36,7 @@ function Woman() {
                                 <a href="#">Buy Now</a>
                             </div>
                             <div className="seemore_bt">
-                                <a href="#">See More</a>
+                                <a href={`clothes/${product.id}`}>See More</a>
                             </div>
                         </div>
                     </div>

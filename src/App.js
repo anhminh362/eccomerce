@@ -4,23 +4,18 @@ import ShowProduct from './DetailProject/ShowProduct';
 import Footer from './Part/Footer';
 import Header from './Part/Header';
 import ProductDetail from './DetailProject/ProductDetail';
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        
-        <Header></Header>
-        <ShowProduct></ShowProduct>
-        <Footer></Footer>
-
-
-
         <Routes>
-          <Route path="/" element={<ShowProduct />} />
-          <Route path="/detail/:id" element={<ProductDetail />} />
+          <Route path='/' element={<Home></Home>} />
+          <Route path="/clothes/:id" element={<ProductDetail />} />
         </Routes>
       </Router>
+
 
     </div>
   );

@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
+import SearchBar from './SearchBar';
+import SearchResultList from './SearchResultList';
 
 class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: [],
+        };
+    }
+
+    setResults = (results) => {
+        this.setState({ results });
+    }
+
     render() {
+        const { results } = this.state;
         return (
             <div className="main">
-                {/* Another variation with a button */}
-                
                 <div className="input-group">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search this blog"
-                    />
-
-                    <div className="input-group-append">
-                        <button
-                            className="btn btn-secondary"
-                            type="button"
-                            style={{ backgroundColor: "#f26522", borderColor: "#f26522" }}
-                        >
-                            <i className="fa fa-search" />
-                        </button>
-                    </div>
+                    <SearchBar setResults={this.setResults} />
+                    <SearchResultList results={results} />
                 </div>
             </div>
         );

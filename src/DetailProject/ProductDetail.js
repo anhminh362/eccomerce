@@ -11,8 +11,9 @@ function ProductDetail() {
 
     const fetchProduct = async (productId) => {
         try {
-            const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
+            const response = await fetch(`http://localhost:3000/clothes/${productId}`);
             const data = await response.json();
+            setProduct(data);
         } catch (error) {
             console.error('Error fetching product:', error);
         }
@@ -23,13 +24,13 @@ function ProductDetail() {
     }
 
     return (
-        <div className="product-container">
-            <h1>{product.title}</h1>
-            <img src={product.image} alt={product.title} />
-            <p>{product.description}</p>
-            <p>Price: {product.price}</p>
-            <p>Category: {product.category}</p>
-            <p>Rating: {product.rating.rate} ({product.rating.count} reviews)</p>
+        <div className='row'>
+            <div className="product-container">
+                <h1>{product.title}</h1>
+                <img src={product.image} alt={product.title} />
+                <p>Price: {product.price}</p>
+                <p>Category: {product.type}</p>
+            </div>
         </div>
     );
 }

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+
 
 function Man() {
     const [products, setProducts] = useState([]);
@@ -9,20 +11,19 @@ function Man() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:3000/manClothes');
+            const response = await fetch('http://localhost:3000/clothes');
             const data = await response.json();
             setProducts(data);
         } catch (error) {
             console.error('Error fetching products:', error);
         }
     };
-
-    const filteredProducts = products.filter(product => product.category === "men's clothing");
+    const filteredProducts = products.filter(product => product.type === "man");
 
     return (
         <div className="row">
             {filteredProducts.map((product, index) => (
-                <div key={index} id={product.id} className="col-lg-4 col-sm-4">
+                <div key={index} id={index} className="col-lg-4 col-sm-4">
                     <div className="box_main w-100 h-100">
                         <h4 className="shirt_text">{product.title}</h4>
                         <p className="price_text">
@@ -36,7 +37,7 @@ function Man() {
                                 <a href="#">Buy Now</a>
                             </div>
                             <div className="seemore_bt">
-                                <a href="#">See More</a>
+                                <a href={`clothes/${product.id}`}>See More</a>
                             </div>
                         </div>
                     </div>

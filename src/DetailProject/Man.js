@@ -36,9 +36,11 @@ function Man() {
                             <div className="buy_bt">
                                 <a href="#">Buy Now</a>
                             </div>
+
                             <div className="seemore_bt">
                                 <a href={`clothes/${product.id}`}>See More</a>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

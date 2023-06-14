@@ -397,8 +397,16 @@ button {
 
 /* Bootstrap 4 text input with search icon */
 
+.form-control input {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    border: 0;
+}
+
 .has-search .form-control {
     padding-left: 2.375rem;
+    position: relative;
 }
 
 .has-search .form-control-feedback {

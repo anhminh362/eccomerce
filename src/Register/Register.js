@@ -1,5 +1,4 @@
 import React from 'react';
-import './Register.css';
 
 class Register extends React.Component {
     constructor(props) {
@@ -45,7 +44,7 @@ class Register extends React.Component {
             if (response.ok) {
                 this.setState({ isSignUp: true, error: '' });
                 alert('Sign up succcesful');
-                setTimeout(()=> {
+                setTimeout(() => {
                     window.location = "http://localhost:3001/login";
                 }, 1000)
             } else {
@@ -76,48 +75,50 @@ class Register extends React.Component {
 
         return (
             <div>
-                {isSignUp ? (
-                    <div>
+                <center>
+                    {isSignUp ? (
+                        <div>
 
-                    </div>
-                ) : (
-                    <div>
-                        {error && <p>{error}</p>}
-                        <form className="form" onSubmit={this.handleSignUp}>
-                            <h1>Đăng nhập</h1>
-                            <div className="form-group">
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleUsernameChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="password"
-                                    className="form-control"
-                                    placeholder="Password"
-                                    value={this.state.password}
-                                    onChange={this.handlePasswordChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    onChange={this.handleEmailChange}
-                                />
-                            </div>
-                            <button type="submit" className="btn btn-primary">
-                                Đăng nhập
-                            </button>
-                        </form>
-                    </div>
-                )}
+                        </div>
+                    ) : (
+                        <div>
+                            {error && <p>{error}</p>}
+                            <form className="form" onSubmit={this.handleSignUp}>
+                                <h1>Đăng nhập</h1>
+                                <div className="form-group">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Username"
+                                        value={this.state.username}
+                                        onChange={this.handleUsernameChange}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        placeholder="Password"
+                                        value={this.state.password}
+                                        onChange={this.handlePasswordChange}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        placeholder="Email"
+                                        value={this.state.email}
+                                        onChange={this.handleEmailChange}
+                                    />
+                                </div>
+                                <button type="submit" className="btn btn-primary">
+                                    Đăng nhập
+                                </button>
+                            </form>
+                        </div>
+                    )}
+                </center>
             </div>
         );
     }

@@ -1,4 +1,4 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
 
 @import url(animate.min.css);
@@ -100,7 +100,7 @@ h4 a,
 h5 a,
 h6 a {
     color: #212121;
-    text-decoration: none !important;
+    text-decoration: none!important;
     opacity: 1
 }
 
@@ -145,7 +145,7 @@ img {
     height: auto;
 }
 
-:focus {
+ :focus {
     outline: 0;
 }
 
@@ -336,7 +336,6 @@ button {
     .sidenav {
         padding-top: 15px;
     }
-
     .sidenav a {
         font-size: 18px;
     }
@@ -397,16 +396,8 @@ button {
 
 /* Bootstrap 4 text input with search icon */
 
-.form-control input {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    border: 0;
-}
-
 .has-search .form-control {
     padding-left: 2.375rem;
-    position: relative;
 }
 
 .has-search .form-control-feedback {
@@ -797,7 +788,6 @@ a:hover {
     0% {
         -webkit-transform: rotate(0deg);
     }
-
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -807,7 +797,6 @@ a:hover {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
